@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/login.css' %}">
+	<link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+	<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js" nonce="b9f86e7c-fa3b-424f-9b28-79f109b9751d"></script>
+	<title>login</title>
+</head>
+<body>
+	<div class="container" id="container">
+		<div class="form-container log-in-container">
+			<form  name="MyForm" method="post">
+				{% csrf_token %}
+				<h1>Sign up</h1>
+				<input type="email" name="email" placeholder="enter your Email" required="required" />
+                <input type="password" name="password" placeholder=" enter your Password" required="required" />
+				{% if status  == 'invalid'%}
+				<p>Invalid Username  or  Password</p>
+				{% endif %}
+				<a href="/create/">create account</a>
+				<a href="/send_otp/">forgot Password</a>
+
+				<button type="submit" style="background-color: cornflowerblue;
+				border:none;
+				color: #FFFFFF;
+				padding: 15px 50px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 10px;
+				border-radius: 5px;
+				cursor: pointer;
+				box-shadow: 0 12px 16px;
+			">login</button>
+			</form>
+		</div>
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-right">
+					<img src="{% static 'images/signup-image.jpg' %}" alt="" srcset="">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

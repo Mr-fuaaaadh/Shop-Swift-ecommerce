@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/create.css'%}">
+	<link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js" nonce="b9f86e7c-fa3b-424f-9b28-79f109b9751d"></script>
+	<title></title>
+</head>
+<body>
+	<div class="container" id="container">
+		<div class="form-container log-in-container">
+			<form action="login/" method="POST">
+				{% csrf_token %}
+				<h1>Sign in</h1>
+				<input type="number" name="id" placeholder="id" required="required"/>
+				<input type="email" name="Email" placeholder="Email" required="required"/>
+				<input type="text" name="Password" id="Password"placeholder="Password" required="required"/>
+				<input type="text" placeholder="Phone number" name="usertype" required="required"/>
+				<input type="text" placeholder="place" name="status" required="required"/>
+
+				<button  type="Submit" value="submit" class="submit">SIGN UP</button>
+			</form>
+		</div>
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-right">
+					<img src="{% static 'images/signin-image.jpg'%}" alt="" srcset="">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
